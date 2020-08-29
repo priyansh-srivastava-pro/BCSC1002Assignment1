@@ -19,7 +19,7 @@ public class Book {
         // Constructor Method
         // Non-Parameterized Constructor Method
 
-        public Book() {
+        public Book(String bookName, String bookAuthorName, long l) {
             this.bookName = "Five Point Someone";
             this.bookAuthorName = "Chetan Bhagat";
             this.bookIsbnNumber = "9788129104595";
@@ -31,7 +31,7 @@ public class Book {
             this.bookIsbnNumber = bookIsbnNumber;
         }
 
-    public Book(String bookName) {
+    public Book() {
             this.bookName = bookName;
             this.bookAuthorName = "Chetan Bhagat";
             this.bookIsbnNumber = " 9788129104595";

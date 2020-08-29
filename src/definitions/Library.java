@@ -16,7 +16,7 @@ public class Library {
     public Library() {
         this.store = new Book[50];
         for (int i = 0; i < store.length; i++) {
-            store[i] = new Book();
+            store[i] = new Book("Book" + (i + 1), null, 9788129104595L + (i + 1));
         }
     }
 

@@ -9,6 +9,8 @@ package definitions;
 
 import java.util.Arrays;
 
+import java.util.Scanner;
+
 public class Student {
 
     // fields
@@ -19,6 +21,8 @@ public class Student {
     int numberOfBooksIssued;
     Book[] Issued;
 
+    Scanner scanner = new Scanner(System.in);
+
     // Constructor Method
     // Non-Parameterized Constructor Method
 
@@ -27,7 +31,7 @@ public class Student {
         this.studentMiddleName = "Kumar";
         this.studentLastName = "Srivastava";
         this.studentUniversityRollNumber = 191500607;
-        this.numberOfBooksIssued = 10;
+        this.numberOfBooksIssued = 0;
         this.Issued = new Book[5];
     }
 
@@ -45,7 +49,7 @@ public class Student {
         this.studentMiddleName = "Kumar";
         this.studentLastName = "Srivastava";
         this.studentUniversityRollNumber = 191500607;
-        this.numberOfBooksIssued = 10;
+        this.numberOfBooksIssued = 0;
         this.Issued = Issued;
     }
 
@@ -92,13 +96,56 @@ public class Student {
         this.numberOfBooksIssued = numberOfBooksIssued;
     }
 
-    public Book[] getIssued() {
-        return Issued;
+    public void doIssue() {
+        if (numberOfBooksIssued == 0) {
+            System.out.println("Please Enter your First name: ");
+            studentFirstName = scanner.nextLine();
+            System.out.println("Please enter your middle name: ");
+            studentMiddleName = scanner.nextLine();
+            System.out.println("please enter your last name: ");
+            studentLastName = scanner.nextLine();
+            System.out.println("Enter your University Number: ");
+            studentUniversityRollNumber = scanner.nextInt();
+        }
+        System.out.println("Enter the book name: ");
+        String bookName = scanner.nextLine();
+        System.out.println("enter the author name: ");
+        String bookAuthorName = scanner.nextLine();
+        System.out.println("Enter the ISBN number of the book: ");
+        long bookIsbnNumber = scanner.nextLong();
+        Issued[getNumberOfBooksIssued()] = new Book(bookName, bookAuthorName, bookIsbnNumber);
+        System.out.println(bookName + " " + "book issued!!");
+        System.out.println("--Welcome to FrontDesk");
     }
 
-    public void setIssued(Book[] issued) {
-        Issued = issued;
+
+    /*
+    * this method used to return the book.
+     */
+
+    public void doReturn() {
+        if (numberOfBooksIssued == 0) {
+            System.out.println("No book is returned");
+        } else {
+            numberOfBooksIssued = 0;
+            this.Issued = new Book[10];
+            System.out.println("Books are returned!!");
+        }
     }
+
+    public void showIssuedBooks(){
+        System.out.println("StudentFirstName: " + studentFirstName);
+        System.out.println("studentMiddleName = " + studentMiddleName);
+        System.out.println("studentLastName = " + studentLastName);
+        System.out.println("studentUniversityRollNumber = " + studentUniversityRollNumber);
+        for (int i = 0; i < numberOfBooksIssued; i++) {
+            System.out.println("Issued = " + Issued[i]);
+        }
+        if (numberOfBooksIssued == 0){
+            System.out.println("No Books Issued!");
+        }
+    }
+
 
     @Override
     public String toString() {
@@ -108,6 +155,10 @@ public class Student {
                 "Student University Roll Number: " + getStudentUniversityRollNumber() +
                 "Number of Books Issued: " + getNumberOfBooksIssued() + ", " +
                 "Name Of The Books Issued: " + getIssued() + ".";
+    }
+
+    private Object[] getIssued() {
+        return new Object[0];
     }
 
     @Override
