@@ -32,12 +32,12 @@ public class Library {
         this.store = store;
     }
 
-    @Override
+    @Override //annotations
     public String toString() {
         return Arrays.toString(store);
     }
 
-    @Override
+    @Override //annotations
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -49,7 +49,7 @@ public class Library {
         return Arrays.equals(getStore(), that.getStore());
     }
 
-    @Override
+    @Override //annotations
     public int hashCode() {
         return Arrays.hashCode(getStore());
     }
