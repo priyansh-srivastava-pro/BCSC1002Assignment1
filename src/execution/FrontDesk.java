@@ -1,3 +1,4 @@
+
 /*  Created by IntelliJ IDEA.
  *  User: Priyansh Srivastava
  *  Date: 25/08/20
@@ -39,7 +40,7 @@ public class FrontDesk {
             System.out.println("4. Exit.");
             System.out.println("Enter your choice (1...4)");
             studentInput = scanner.nextInt();
-            switch (studentInput){
+            switch (studentInput) {
                 case ISSUE_NEW_BOOK:
                     System.out.println("Enter the name of the book you want to issue:");
                     scanner.nextLine();
@@ -61,7 +62,7 @@ public class FrontDesk {
                 default:
                     break;
             }
-        }while (studentInput != EXIT);
+        } while (studentInput != EXIT);
         scanner.close();
     }
 }
