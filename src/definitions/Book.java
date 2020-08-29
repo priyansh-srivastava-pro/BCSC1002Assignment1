@@ -65,7 +65,7 @@ public class Book {
         //  The toString() method
         // public String toString() {}
 
-        @Override
+        @Override //annotations
         public String toString () {
             return "Book{" +
                     "bookName='" + bookName + '\'' +
@@ -95,8 +95,8 @@ public class Book {
             return bookIsbnNumber;
         }
 
-        @Override
-        public int hashCode () {
+    @Override // annotations
+    public int hashCode () {
             return Objects.hash(getBookName(), getBookAuthorName(), getBookIsbnNumber());
         }
 
