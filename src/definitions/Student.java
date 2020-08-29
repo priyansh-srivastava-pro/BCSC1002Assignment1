@@ -8,7 +8,6 @@
 package definitions;
 
 import java.util.Arrays;
-
 import java.util.Scanner;
 
 public class Student {
@@ -120,7 +119,7 @@ public class Student {
 
 
     /*
-    * this method used to return the book.
+     * this method used to return the book.
      */
 
     public void doReturn() {
@@ -133,7 +132,7 @@ public class Student {
         }
     }
 
-    public void showIssuedBooks(){
+    public void showIssuedBooks() {
         System.out.println("StudentFirstName: " + studentFirstName);
         System.out.println("studentMiddleName = " + studentMiddleName);
         System.out.println("studentLastName = " + studentLastName);
@@ -141,7 +140,7 @@ public class Student {
         for (int i = 0; i < numberOfBooksIssued; i++) {
             System.out.println("Issued = " + Issued[i]);
         }
-        if (numberOfBooksIssued == 0){
+        if (numberOfBooksIssued == 0) {
             System.out.println("No Books Issued!");
         }
     }
